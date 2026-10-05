@@ -36,3 +36,37 @@
       </div>
       <div class="banner-pill">0 reports waiting</div>
     </section>
+    <section class="stats">
+      <div class="stat s-amber">
+        <div class="stat-top"><span class="stat-ico">📝</span><span class="stat-name">New reports</span></div>
+        <span class="stat-num">0</span>
+        <div class="bar"><div class="bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="stat s-blue">
+        <div class="stat-top"><span class="stat-ico">🔧</span><span class="stat-name">In progress</span></div>
+        <span class="stat-num">0</span>
+        <div class="bar"><div class="bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="stat s-green">
+        <div class="stat-top"><span class="stat-ico">✅</span><span class="stat-name">Resolved</span></div>
+        <span class="stat-num">0</span>
+        <div class="bar"><div class="bar-fill" style="width:0%"></div></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Incoming reports</h2>
+        <input type="search" class="search-box" placeholder="🔍  Search reports">
+      </div>
+
+      <div class="filter-chips">
+        <input type="radio" id="d-all" name="dash-filter" checked>
+        <label for="d-all">All</label>
+        <input type="radio" id="d-new" name="dash-filter">
+        <label for="d-new">New</label>
+        <input type="radio" id="d-progress" name="dash-filter">
+        <label for="d-progress">In progress</label>
+        <input type="radio" id="d-resolved" name="dash-filter">
+        <label for="d-resolved">Resolved</label>
+      </div>
