@@ -25,3 +25,14 @@
         <option value="Streetlights">Streetlights</option>
         <option value="Other">Other</option>
       </select>
+<label for="photo">Photo</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+      <img id="preview" class="preview" alt="">
+
+      <label for="description">What is the problem?</label>
+      <textarea id="description" name="description" rows="4" maxlength="300" placeholder="Write a short description" required></textarea>
+
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" placeholder="Example: Lane 4, near the park gate" required>
+
+      <button type="submit" class="big-button">Submit report</button>
