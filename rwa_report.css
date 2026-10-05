@@ -105,3 +105,19 @@ h3 {
   flex-wrap: wrap;
   gap: 10px;
 }
+.categories span {
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: default;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.categories span:hover {
+  background: var(--main-light);
+  border-color: var(--main);
+  color: var(--main-dark);
+}
