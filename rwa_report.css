@@ -292,3 +292,49 @@ h3 {
   border-radius: 14px;
   margin-top: 12px;
 }
+.field-title {
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 0 10px 0;
+}
+
+.category-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.category-picker input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.report-form .category-picker label {
+  margin: 0;
+  padding: 16px 10px;
+  text-align: center;
+  font-weight: 500;
+  background: var(--bg);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.report-form .category-picker label:hover {
+  border-color: var(--line);
+  transform: translateY(-2px);
+}
+
+.category-picker input:checked + label {
+  background: var(--main-light);
+  border-color: var(--main);
+  color: var(--main-dark);
+  font-weight: 700;
+}
+
+.category-picker input:focus-visible + label {
+  outline: 3px solid var(--accent);
+}
