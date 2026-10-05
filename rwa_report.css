@@ -23,3 +23,76 @@ body {
   padding-bottom: 90px;
   line-height: 1.5;
 }
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 10px 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 36px 0 14px 0;
+}
+
+.topbar {
+  background: linear-gradient(135deg, var(--main-dark), var(--main));
+  color: white;
+  padding: 28px 24px 36px 24px;
+  border-radius: 0 0 28px 28px;
+  box-shadow: 0 8px 24px rgba(15, 118, 110, 0.25);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.topbar p {
+  margin: 6px 0 0 0;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.hero {
+  background: linear-gradient(135deg, #ffffff, var(--main-light));
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 10px 30px rgba(22, 48, 45, 0.1);
+  margin-top: -10px;
+}
+
+.hero p {
+  margin: 0 0 22px 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.big-button {
+  display: block;
+  text-align: center;
+  background: var(--main);
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.big-button:hover {
+  background: var(--main-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.4);
+}
