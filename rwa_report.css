@@ -121,3 +121,174 @@ h3 {
   border-color: var(--main);
   color: var(--main-dark);
 }
+.empty {
+  background: var(--card);
+  border: 2px dashed var(--line);
+  border-radius: 18px;
+  padding: 36px 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty p {
+  margin: 4px 0;
+}
+
+.empty p:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.issue {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  border-left: 5px solid var(--main);
+  box-shadow: 0 4px 14px rgba(22, 48, 45, 0.07);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.issue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(22, 48, 45, 0.12);
+}
+
+.issue-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.issue p {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.status {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.reported {
+  background: #fef0c7;
+  color: #8a5a00;
+}
+
+.in-progress {
+  background: #d3e8ff;
+  color: #0f4a96;
+}
+
+.resolved {
+  background: #d1f2dc;
+  color: #14602b;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background: white;
+  box-shadow: 0 -4px 20px rgba(22, 48, 45, 0.1);
+  padding-bottom: 6px;
+}
+
+.bottom-nav a {
+  flex: 1;
+  text-align: center;
+  padding: 16px 0 12px 0;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  border-top: 3px solid transparent;
+  transition: color 0.15s, background 0.15s;
+}
+
+.bottom-nav a:hover {
+  background: var(--bg);
+  color: var(--main);
+}
+
+.bottom-nav a.active {
+  color: var(--main);
+  font-weight: 800;
+  border-top: 3px solid var(--main);
+}
+
+.report-form {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 30px rgba(22, 48, 45, 0.1);
+}
+
+.report-form label {
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 22px 0 8px 0;
+}
+
+.report-form label:first-child {
+  margin-top: 0;
+}
+
+.report-form select,
+.report-form input[type="text"],
+.report-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.report-form select:focus,
+.report-form input[type="text"]:focus,
+.report-form textarea:focus {
+  border-color: var(--main);
+  background: white;
+}
+
+.report-form input[type="file"] {
+  width: 100%;
+  padding: 18px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--main-light);
+  border: 2px dashed var(--main);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.report-form .big-button {
+  width: 100%;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.preview {
+  display: none;
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-top: 12px;
+}
