@@ -96,3 +96,12 @@ h3 {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(15, 118, 110, 0.4);
 }
+.big-button:active {
+  transform: translateY(0);
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
