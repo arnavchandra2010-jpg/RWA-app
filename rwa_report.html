@@ -44,3 +44,17 @@
     <a href="report.html" class="active">Report</a>
     <a href="track.html">Track</a>
   </nav>
+  <script>
+    var photoInput = document.getElementById("photo");
+    var preview = document.getElementById("preview");
+
+    photoInput.addEventListener("change", function () {
+      var file = photoInput.files[0];
+      if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+      } else {
+        preview.style.display = "none";
+      }
+    });
+  </script>
