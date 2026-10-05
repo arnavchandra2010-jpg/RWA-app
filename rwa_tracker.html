@@ -14,28 +14,51 @@
 
   <main>
 <section class="summary">
-      <div class="summary-box">
-        <span class="summary-number">0</span>
-        <span class="status reported">Reported</span>
-      </div>
-      <div class="summary-box">
-        <span class="summary-number">0</span>
-        <span class="status in-progress">In progress</span>
-      </div>
-      <div class="summary-box">
-        <span class="summary-number">0</span>
-        <span class="status resolved">Resolved</span>
-      </div>
-    </section>
+    <div class="stat-card stat-reported">
+      <div class="stat-icon">📝</div>
+      <span class="stat-number">0</span>
+      <span class="stat-label">Reported</span>
+    </div>
+    <div class="stat-card stat-progress">
+      <div class="stat-icon">🔧</div>
+      <span class="stat-number">0</span>
+      <span class="stat-label">In progress</span>
+    </div>
+    <div class="stat-card stat-resolved">
+      <div class="stat-icon">✅</div>
+      <span class="stat-number">0</span>
+      <span class="stat-label">Resolved</span>
+    </div>
+  </section>
 
-    <section>
-      <h3>All issues</h3>
-      <div class="empty">
-        <p>No issues reported yet.</p>
-        <p>Reported issues and their status will show up here.</p>
-        <a class="link-button" href="rwa_report.html">Report the first issue</a>
-      </div>
-    </section>
+  <section class="toolbar">
+    <input type="search" class="search-box" placeholder="🔍  Search by location or description">
+
+    <div class="filter-chips">
+      <input type="radio" id="f-all" name="filter" checked>
+      <label for="f-all">All</label>
+
+      <input type="radio" id="f-reported" name="filter">
+      <label for="f-reported">Reported</label>
+
+      <input type="radio" id="f-progress" name="filter">
+      <label for="f-progress">In progress</label>
+
+      <input type="radio" id="f-resolved" name="filter">
+      <label for="f-resolved">Resolved</label>
+    </div>
+  </section>
+
+  <section>
+    <h3>All issues</h3>
+    <div class="empty-state">
+      <div class="empty-icon">🏘️</div>
+      <h4>Nothing reported yet</h4>
+      <p>Your colony is running smoothly. When a resident reports a problem, it will appear here with its live status.</p>
+      <a class="link-button" href="rwa_report.html">Report the first issue</a>
+    </div>
+  </section>
+
 
   </main>
  <nav class="bottom-nav">
