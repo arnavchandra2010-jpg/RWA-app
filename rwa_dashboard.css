@@ -1,1 +1,29 @@
+.topbar-rwa {
+  position: relative;
+  background: linear-gradient(135deg, #0a2f2c, #0f766e 70%, #14998f);
+}
+
+.role-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0a2f2c;
+  background: var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.report-card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 28px rgba(22, 48, 45, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
 
