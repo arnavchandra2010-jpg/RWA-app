@@ -60,16 +60,19 @@
         <input type="search" class="search-box" placeholder="🔍  Search reports">
       </div>
 
-      <div class="filter-chips">
-        <input type="radio" id="d-all" name="dash-filter" checked>
-        <label for="d-all">All</label>
-        <input type="radio" id="d-new" name="dash-filter">
-        <label for="d-new">New</label>
-        <input type="radio" id="d-progress" name="dash-filter">
-        <label for="d-progress">In progress</label>
-        <input type="radio" id="d-resolved" name="dash-filter">
-        <label for="d-resolved">Resolved</label>
-      </div>
+      <div class="filter-tiles">
+  <input type="radio" id="t-all" name="dash-filter" checked>
+  <label for="t-all">📋 All</label>
+
+  <input type="radio" id="t-new" name="dash-filter">
+  <label for="t-new">📝 New</label>
+
+  <input type="radio" id="t-progress" name="dash-filter">
+  <label for="t-progress">🔧 In progress</label>
+
+  <input type="radio" id="t-resolved" name="dash-filter">
+  <label for="t-resolved">✅ Resolved</label>
+</div>
       <div class="empty-state">
         <div class="empty-icon">📭</div>
         <h4>No reports to review</h4>
