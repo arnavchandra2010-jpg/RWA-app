@@ -7,40 +7,87 @@
   <link rel="stylesheet" href="rwa.css">
 </head>
 <body>
-  <header class="topbar">
-    <h1>Colony Fix</h1>
-    <p>Report problems. Watch them get fixed.</p>
-  </header>
-  <main>  
-    <section class="hero">
-      <h2>See something broken in your colony?</h2>
-      <p>Take a photo, pick a category, and tell your RWA.</p>
-      <a class="big-button" href="report.html">Report an issue</a>
-    </section>
-    <section>
-      <h3>What can you report?</h3>
-      <div class="categories">
-        <span>Water</span>
-        <span>Electricity</span>
-        <span>Roads</span>
-        <span>Garbage</span>
-        <span>Streetlights</span>
-        <span>Other</span>
+ <header class="hm-hero">
+  <div class="hm-hero-top">
+    <span class="hm-logo">CF</span>
+    <span class="hm-brand">Colony Fix</span>
+  </div>
+  <h1>Your colony, <span>fixed together.</span></h1>
+  <p>Report a problem in under a minute and watch the RWA take care of it.</p>
+  <a class="hm-cta" href="/report">📸 Report an issue</a>
+</header>
+
+<main class="hm-main">
+
+  <section class="hm-numbers">
+    <div class="hm-num hm-amber">
+      <strong>0</strong>
+      <span>Reported</span>
+    </div>
+    <div class="hm-num hm-blue">
+      <strong>0</strong>
+      <span>In progress</span>
+    </div>
+    <div class="hm-num hm-green">
+      <strong>0</strong>
+      <span>Resolved</span>
+    </div>
+  </section>
+
+  <section class="hm-section">
+    <div class="hm-title">
+      <h2>📢 Notice board</h2>
+      <span class="hm-tag">From your RWA</span>
+    </div>
+    <div class="hm-empty">
+      <div class="hm-empty-icon">📌</div>
+      <h4>No announcements right now</h4>
+      <p>Water cuts, meetings and colony updates from the RWA will be pinned here.</p>
+    </div>
+  </section>
+
+  <section class="hm-section">
+    <div class="hm-title">
+      <h2>🛠️ Recently fixed</h2>
+      <a class="hm-link" href="/track">See all →</a>
+    </div>
+    <div class="hm-empty">
+      <div class="hm-empty-icon">✅</div>
+      <h4>Nothing fixed yet</h4>
+      <p>Resolved issues will show up here so everyone can see the RWA in action.</p>
+    </div>
+  </section>
+
+  <section class="hm-section">
+    <div class="hm-title">
+      <h2>How it works</h2>
+    </div>
+    <div class="hm-steps">
+      <div class="hm-step">
+        <span class="hm-step-no">1</span>
+        <h4>Report</h4>
+        <p>Snap a photo, pick a category and add the location.</p>
       </div>
-    </section>
-    <section>
-      <h3>Ongoing issues</h3>
-      <div class="empty">
-        <p>No issues reported yet.</p>
-        <p>When residents report problems, they will show up here.</p>
+      <div class="hm-step">
+        <span class="hm-step-no">2</span>
+        <h4>Review</h4>
+        <p>The RWA checks your report and starts working on it.</p>
       </div>
-    </section>
-  </main>
-  <nav class="bottom-nav">
-    <a href="/" class="active">Home</a>
-    <a href="/report">Report</a>
-    <a href="/track">Track</a>
-    <a href="/dashboard>Dashboard<a/>
-  </nav>
+      <div class="hm-step">
+        <span class="hm-step-no">3</span>
+        <h4>Fixed</h4>
+        <p>Track the status live until the problem is resolved.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bottom-nav">
+  <a href="/" class="active">Home</a>
+  <a href="/report">Report</a>
+  <a href="/track">Track</a>
+  <a href="/dashboard">Dashboard</a>
+</nav>
 </body>
 </html>
