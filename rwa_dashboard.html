@@ -24,6 +24,7 @@
     <div class="side-card">
       <strong>RWA access</strong>
       <p>You can review reports and update their status.</p>
+      <a class="dash-logout" href="/logout">Log out</a>
     </div>
   </aside>
 
@@ -31,10 +32,28 @@
 
     <section class="banner">
       <div>
-        <h1>Welcome back 👋</h1>
-        <p>Here is what is happening in your colony today.</p>
+        <h1>Welcome back, {{ session.rwa_name }} 👋</h1>
+    <p>Here is what is happening in your colony today.</p>
+  </div>
+  <div class="banner-pill">{{ counts.reported }} reports waiting</div>
+    </section>
+
+    <section class="stats">
+      <div class="stat s-amber">
+        <div class="stat-top"><span class="stat-ico">📝</span><span class="stat-name">New reports</span></div>
+       <span class="stat-num">{{ counts.reported }}</span>
+<div class="bar"><div class="bar-fill" style="width: {{(counts.reported / counts.total * 100) if counts.total else 0 }}%"></div></div>
       </div>
-      <div class="banner-pill">0 reports waiting</div>
+      <div class="stat s-blue">
+        <div class="stat-top"><span class="stat-ico">🔧</span><span class="stat-name">In progress</span></div>
+        <span class="stat-num">{{ counts.progress }}</span>
+        <div class="bar"><div class="bar-fill" style="width: {{ (counts.progress / counts.total * 100) if counts.total else 0 }}%"></div></div>
+      </div>
+      <div class="stat s-green">
+        <div class="stat-top"><span class="stat-ico">✅</span><span class="stat-name">Resolved</span></div>
+        <span class="stat-num">{{ counts.resolved }}</span>
+        <div class="bar"><div class="bar-fill" style="width: {{ (counts.resolved / counts.total * 100) if counts.total else 0 }}%"></div></div>
+      </div>
     </section>
     <section class="stats">
       <div class="stat s-amber">
@@ -73,11 +92,38 @@
   <input type="radio" id="t-resolved" name="dash-filter">
   <label for="t-resolved">✅ Resolved</label>
 </div>
-      <div class="empty-state">
-        <div class="empty-icon">📭</div>
-        <h4>No reports to review</h4>
-        <p>New reports from residents will appear here. Open one to change its status.</p>
+      {% if issues %}
+  {% for issue in issues %}
+  <div class="report-card">
+    <img class="report-photo" src="/static/uploads/{{ issue.photo }}" alt="">
+    <div>
+      <div class="report-head">
+        <span class="report-tag">{{ issue.category }}</span>
+        <span class="report-time">{{ issue.created_at }}</span>
       </div>
+      <p class="report-text">{{ issue.description }}</p>
+      <p class="report-place">📍 {{ issue.location }}</p>
+
+      <form method="post" action="/update_status/{{ issue.id }}" class="status-switch">
+        <input type="radio" id="s{{ issue.id }}-reported" name="status" value="Reported" {% if issue.status == "Reported" %}checked{% endif %} onchange="this.form.submit()">
+        <label class="opt-reported" for="s{{ issue.id }}-reported">Reported</label>
+
+        <input type="radio" id="s{{ issue.id }}-progress" name="status" value="In progress" {% if issue.status == "In progress" %}checked{% endif %} onchange="this.form.submit()">
+        <label class="opt-progress" for="s{{ issue.id }}-progress">In progress</label>
+
+        <input type="radio" id="s{{ issue.id }}-resolved" name="status" value="Resolved" {% if issue.status == "Resolved" %}checked{% endif %} onchange="this.form.submit()">
+        <label class="opt-resolved" for="s{{ issue.id }}-resolved">Resolved</label>
+      </form>
+    </div>
+  </div>
+  {% endfor %}
+      {% else %}
+  <div class="empty-state">
+    <div class="empty-icon">📭</div>
+    <h4>No reports to review</h4>
+    <p>New reports from residents will appear here. Open one to change its status.</p>
+  </div>
+{% endif %}
     </section>
 
   </div>
@@ -85,3 +131,4 @@
 
 </body>
 </html>
+  
