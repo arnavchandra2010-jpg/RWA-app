@@ -14,7 +14,77 @@
   </header>
 
   <main>
-   
+   <section class="summary">
+    <div class="stat-card stat-reported">
+      <div class="stat-icon">📝</div>
+     <span class="stat-number">{{ counts.reported }}</span>
+      <span class="stat-label">Reported</span>
+    </div>
+    <div class="stat-card stat-progress">
+      <div class="stat-icon">🔧</div>
+     <span class="stat-number">{{ counts.progress }}</span>
+      <span class="stat-label">In progress</span>
+    </div>
+    <div class="stat-card stat-resolved">
+      <div class="stat-icon">✅</div>
+    <span class="stat-number">{{ counts.resolved }}</span>
+      <span class="stat-label">Resolved</span>
+    </div>
+  </section>
+
+  <section class="toolbar">
+    <input type="search" class="search-box" placeholder="🔍  Search by location or description">
+
+    <div class="filter-chips">
+      <input type="radio" id="f-all" name="filter" checked>
+      <label for="f-all">All</label>
+
+      <input type="radio" id="f-reported" name="filter">
+      <label for="f-reported">Reported</label>
+
+      <input type="radio" id="f-progress" name="filter">
+      <label for="f-progress">In progress</label>
+
+      <input type="radio" id="f-resolved" name="filter">
+      <label for="f-resolved">Resolved</label>
+    </div>
+  </section>
+
+  <section>
+    <h3>All issues</h3>
+    <div class="empty-state">
+      {% if issues %}
+  {% for issue in issues %}
+  <div class="report-card">
+    <img class="report-photo" src="/static/uploads/{{ issue.photo }}" alt="">
+    <div>
+      <div class="report-head">
+        <span class="report-tag">{{ issue.category }}</span>
+        {% if issue.status == "Reported" %}
+          <span class="status reported">Reported</span>
+        {% elif issue.status == "In progress" %}
+          <span class="status in-progress">In progress</span>
+        {% else %}
+          <span class="status resolved">Resolved</span>
+        {% endif %}
+      </div>
+      <p class="report-text">{{ issue.description }}</p>
+      <p class="report-place">📍 {{ issue.location }}</p>
+      <span class="report-time">{{ issue.created_at }}</span>
+    </div>
+  </div>
+  {% endfor %}
+{% else %}
+  <div class="empty-state">
+    <div class="empty-icon">🏘️</div>
+    <h4>Nothing reported yet</h4>
+    <p>Your colony is running smoothly. When a resident reports a problem, it will appear here with its live status.</p>
+    <a class="link-button" href="/report">Report the first issue</a>
+  </div>
+{% endif %}
+    </div>
+  </section>
+
   </main>
 
   <nav class="bottom-nav">
