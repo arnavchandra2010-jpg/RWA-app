@@ -7,7 +7,7 @@ from functools import wraps
 from werkzeug.security import check_password_hash
 
 app = flask(__name__)
-app.secret_key = "apun_princeton_jayega"
+app.secret_key = "NOT THE ORIGNAL ONE OFCOURSE"
 UPLOAD_FOLDER = os.path.join(app.root_path, "static", "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 DB_PATH = os.path.join(app.root_path, "rwa.db")
