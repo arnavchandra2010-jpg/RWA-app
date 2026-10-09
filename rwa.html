@@ -21,15 +21,15 @@
 
   <section class="hm-numbers">
     <div class="hm-num hm-amber">
-      <strong>0</strong>
+      <strong>{{ counts.reported }}</strong>
       <span>Reported</span>
     </div>
     <div class="hm-num hm-blue">
-      <strong>0</strong>
+      <strong>{{ counts.progress }}</strong>
       <span>In progress</span>
     </div>
     <div class="hm-num hm-green">
-      <strong>0</strong>
+      <strong>{{ counts.resolved }}</strong>
       <span>Resolved</span>
     </div>
   </section>
@@ -39,11 +39,26 @@
       <h2>📢 Notice board</h2>
       <span class="hm-tag">From your RWA</span>
     </div>
-    <div class="hm-empty">
-      <div class="hm-empty-icon">📌</div>
-      <h4>No announcements right now</h4>
-      <p>Water cuts, meetings and colony updates from the RWA will be pinned here.</p>
+  {% if fixed %}
+<div class="hm-fixed-list">
+  {% for issue in fixed %}
+  <div class="hm-fixed">
+    <img src="/static/uploads/{{ issue.photo }}" alt="">
+    <div>
+      <span class="hm-fixed-tag">✅ Fixed · {{ issue.category }}</span>
+      <h4>{{ issue.description }}</h4>
+      <p>📍 {{ issue.location }}</p>
     </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="hm-empty">
+  <div class="hm-empty-icon">✅</div>
+  <h4>Nothing fixed yet</h4>
+  <p>Resolved issues will show up here so everyone can see the RWA in action.</p>
+</div>
+{% endif %}
   </section>
 
   <section class="hm-section">
