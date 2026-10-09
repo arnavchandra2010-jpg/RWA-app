@@ -58,7 +58,10 @@ def login_required(view):
 
 @app.route("/")
 def home():
-  return render_template("rwa.html")
+    conn = get_db()
+    fixed = conn.execute("SELECT * FROM issues WHERE status = 'Resolved' ORDER BY id DESC LIMIT 3").fetchall()
+    conn.close()
+    return render_template("rwa.html", counts=get_counts(), fixed=fixed)
 @app.route("/report")
 def report():
   def report():
