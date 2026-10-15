@@ -28,8 +28,30 @@ def create_table():
             status TEXT DEFAULT 'Reported',
             created_at TEXT
         )
+      """
+    )
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE,
+            full_name TEXT,
+            password_hash TEXT
+        )
         """
     )
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS notices (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT,
+            message TEXT,
+            posted_by TEXT,
+            created_at TEXT
+        )
+        """
+    )   
+  
     conn.commit()
     conn.close()
 
