@@ -68,7 +68,33 @@
       </div>
       <div class="stat s-green">
         <div class="stat-top"><span class="stat-ico">✅</span><span class="stat-name">Resolved</span></div>
-        <span class="stat-num">0</span>
+        <span <section class="panel notice-panel">
+  <div class="panel-head">
+    <h2>📢 Post an announcement</h2>
+  </div>
+
+  <form class="notice-form" method="post" action="/post_notice">
+    <input type="text" name="title" placeholder="Title, for example: Water supply off on Sunday" maxlength="80" required>
+    <textarea name="message" rows="3" maxlength="300" placeholder="Write the details residents should know" required></textarea>
+    <button type="submit" class="notice-button">Post to notice board</button>
+  </form>
+
+  {% if notices %}
+  <div class="notice-manage">
+    {% for notice in notices %}
+    <div class="notice-row">
+      <div>
+        <strong>{{ notice.title }}</strong>
+        <span>{{ notice.created_at }} · {{ notice.posted_by }}</span>
+      </div>
+      <form method="post" action="/delete_notice/{{ notice.id }}">
+        <button type="submit" class="notice-delete">Delete</button>
+      </form>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>class="stat-num">0</span>
         <div class="bar"><div class="bar-fill" style="width:0%"></div></div>
       </div>
     </section>
