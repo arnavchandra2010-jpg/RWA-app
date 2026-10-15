@@ -35,58 +35,61 @@
   </section>
 
   <section class="hm-section">
-    <div class="hm-title">
-      <h2>📢 Notice board</h2>
-      <span class="hm-tag">From your RWA</span>
+  <div class="hm-title">
+    <h2>📢 Notice board</h2>
+    <span class="hm-tag">From your RWA</span>
+  </div>
+
+  {% if notices %}
+  <div class="hm-notice-list">
+    {% for notice in notices %}
+    <div class="hm-notice">
+      <div class="hm-notice-pin">📌</div>
+      <div>
+        <h4>{{ notice.title }}</h4>
+        <p>{{ notice.message }}</p>
+        <span>Posted by {{ notice.posted_by }} · {{ notice.created_at }}</span>
+      </div>
     </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="hm-empty">
+    <div class="hm-empty-icon">📌</div>
+    <h4>No announcements right now</h4>
+    <p>Water cuts, meetings and colony updates from the RWA will be pinned here.</p>
+  </div>
+  {% endif %}
+</section>
+
+<section class="hm-section">
+  <div class="hm-title">
+    <h2>🛠️ Recently fixed</h2>
+    <a class="hm-link" href="/track">See all →</a>
+  </div>
+
   {% if fixed %}
-<div class="hm-fixed-list">
-  {% for issue in fixed %}
-  <div class="hm-fixed">
-    <img src="/static/uploads/{{ issue.photo }}" alt="">
-    <div>
-      <span class="hm-fixed-tag">✅ Fixed · {{ issue.category }}</span>
-      <h4>{{ issue.description }}</h4>
-      <p>📍 {{ issue.location }}</p>
+  <div class="hm-fixed-list">
+    {% for issue in fixed %}
+    <div class="hm-fixed">
+      <img src="/static/uploads/{{ issue.photo }}" alt="">
+      <div>
+        <span class="hm-fixed-tag">✅ Fixed · {{ issue.category }}</span>
+        <h4>{{ issue.description }}</h4>
+        <p>📍 {{ issue.location }}</p>
+      </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
-{% else %}
-
-{% endif %}
-  </section>
-
-  <section class="hm-section">{% if notices %}
-<div class="hm-notice-list">
-  {% for notice in notices %}
-  <div class="hm-notice">
-    <div class="hm-notice-pin">📌</div>
-    <div>
-      <h4>{{ notice.title }}</h4>
-      <p>{{ notice.message }}</p>
-      <span>Posted by {{ notice.posted_by }} · {{ notice.created_at }}</span>
-    </div>
+  {% else %}
+  <div class="hm-empty">
+    <div class="hm-empty-icon">✅</div>
+    <h4>Nothing fixed yet</h4>
+    <p>Resolved issues will show up here so everyone can see the RWA in action.</p>
   </div>
-  {% endfor %}
-</div>
-{% else %}
-<div class="hm-empty">
-  <div class="hm-empty-icon">📌</div>
-  <h4>No announcements right now</h4>
-  <p>Water cuts, meetings and colony updates from the RWA will be pinned here.</p>
-</div>
-{% endif %}
-    <div class="hm-title">
-      <h2>🛠️ Recently fixed</h2>
-      <a class="hm-link" href="/track">See all →</a>
-    </div>
-    <div class="hm-empty">
-      <div class="hm-empty-icon">✅</div>
-      <h4>Nothing fixed yet</h4>
-      <p>Resolved issues will show up here so everyone can see the RWA in action.</p>
-    </div>
-  </section>
+  {% endif %}
+</section>
+  
 
   <section class="hm-section">
     <div class="hm-title">
