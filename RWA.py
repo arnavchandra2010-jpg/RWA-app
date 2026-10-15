@@ -157,6 +157,29 @@ def update_status(issue_id):
         conn.close()
     return redirect("/dashboard")
 
+@app.route("/post_notice", methods=["POST"])
+@login_required
+def post_notice():
+    title = request.form["title"].strip()
+    message = request.form["message"].strip()
+    if title and message:
+        conn = get_db()
+        conn.execute(
+            "INSERT INTO notices (title, message, posted_by, created_at) VALUES (?, ?, ?, ?)",
+            (title, message, session["rwa_name"], datetime.now().strftime("%d %b %Y")),
+        )
+        conn.commit()
+        conn.close()
+    return redirect("/dashboard")
 
+
+@app.route("/delete_notice/<int:notice_id>", methods=["POST"])
+@login_required
+def delete_notice(notice_id):
+    conn = get_db()
+    conn.execute("DELETE FROM notices WHERE id = ?", (notice_id,))
+    conn.commit()
+    conn.close()
+    return redirect("/dashboard")
 if __name__ == "__main__":
     app.run(debug=True)
