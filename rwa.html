@@ -53,15 +53,30 @@
   {% endfor %}
 </div>
 {% else %}
-<div class="hm-empty">
-  <div class="hm-empty-icon">✅</div>
-  <h4>Nothing fixed yet</h4>
-  <p>Resolved issues will show up here so everyone can see the RWA in action.</p>
-</div>
+
 {% endif %}
   </section>
 
-  <section class="hm-section">
+  <section class="hm-section">{% if notices %}
+<div class="hm-notice-list">
+  {% for notice in notices %}
+  <div class="hm-notice">
+    <div class="hm-notice-pin">📌</div>
+    <div>
+      <h4>{{ notice.title }}</h4>
+      <p>{{ notice.message }}</p>
+      <span>Posted by {{ notice.posted_by }} · {{ notice.created_at }}</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="hm-empty">
+  <div class="hm-empty-icon">📌</div>
+  <h4>No announcements right now</h4>
+  <p>Water cuts, meetings and colony updates from the RWA will be pinned here.</p>
+</div>
+{% endif %}
     <div class="hm-title">
       <h2>🛠️ Recently fixed</h2>
       <a class="hm-link" href="/track">See all →</a>
